@@ -1,0 +1,22 @@
+extends ./includes/layout
+
+block main-content
+  .signup(ng-controller="SignUpCtrl")
+    .container
+      .row
+        .col-sm-4.col-sm-offset-4(style='margin-top:5em')
+          h3(style='margin-left:6em') Sign Up
+          .row
+            .col-sm-offset-1
+              #flash-message(class="alert alert-{{messageType}}", role="alert") {{ message }}
+              form
+                .form-group
+                  label(for='username') Username:
+                  input#email.form-control(type='text', placeholder='Enter your username', required=true, ng-model="username")
+                .form-group
+                  label(for='pwd') Password:
+                  input#pwd.form-control(type='password', placeholder='Enter your password', required=true, ng-model="password")
+                .form-group
+                  label(for='cpwd') Confirm Password:
+                  input#cpwd.form-control(type='password', placeholder='Confirm your password', required=true, ng-model="conf_password")
+                button.btn.btn-primary(type='submit', ng-click="signup(username, password, conf_password)") Sign Up

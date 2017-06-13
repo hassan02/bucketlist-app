@@ -1,0 +1,11 @@
+extends ./includes/layout
+
+block main-content
+  .container
+    .row
+      .col-sm-4.col-sm-offset-5(style='margin-top:8em')
+        h4 Welcome to MyBucketlists
+        .row
+          .col-sm-offset-1
+            a.btn.btn-primary(href="/login", style='margin-left:1em') Login
+            a.btn.btn-default(href="/signup", style='margin-left:2em') Sign Up

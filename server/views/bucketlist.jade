@@ -1,0 +1,16 @@
+extends ./includes/layout
+
+block main-content
+  .bucketlist(ng-controller='BucketlistCtrl')
+    .container
+      .row
+        .col-sm-12.col-sm-offset-3(style='margin-top:2em')
+          h4 MyBucketlists
+          .row
+            .col-sm-offset-1
+              table(border='1')
+                tr(ng-repeat='bucketlist in bucketlists track by $index')
+                  td {{ $index+1 }}
+                  td {{ bucketlist.name }}
+                  td {{ bucketlist.date_created | date:'medium' }}
+                  td {{ bucketlist.date_modified | date:'medium' }}
